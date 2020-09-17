@@ -93,8 +93,11 @@ function mouseReleased(){
 }
 
 function keyPressed(){
-    if(keyCode === 32){
-       // slingshot.attach(bird.body);
+    if(keyCode === 32){ //ASCII
+       bird.trajectory = [];
+       Matter.Body.setPosition(bird.body, {x: 200, y: 50});
+       slingshot.attach(bird.body);
+       gameState = "onSling";
     }
 }
 
@@ -115,3 +118,16 @@ async function getBackgroundImg(){
     backgroundImg = loadImage(bg);
     console.log(backgroundImg);
 }
+
+
+/*
+Common errors:
+1. Typos
+2. Incorrect use of functions
+3. Scope of variable
+
+Techniques:
+1. Commenting sections of your code
+2. Printing values of variables in the console : console.log()
+3. Printing messages in the console
+*/
